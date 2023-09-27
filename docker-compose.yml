@@ -1,0 +1,8 @@
+services:
+  yivi:
+    container_name: tosti-yivi
+    image: ghcr.io/privacybydesign/irma:edge
+    command: server -v -c /config.yml
+    restart: always
+    volumes:
+    - ./config.yml:/config.yml

@@ -1,0 +1,12 @@
+production: true
+
+port: 80
+url: "https://yivi.tosti.science.ru.nl/"
+
+no_auth: false
+no_email: true
+
+requestors:
+    tosti:
+        auth_method: "token"
+        key: "5UX7pNchbtWDviwDaRy0VjS3rqfCxHrQMd914eKPNQgFJK6p"
