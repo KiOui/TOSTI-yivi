@@ -1,3 +1,5 @@
+version: "3.6"
+
 services:
   yivi:
     container_name: tosti-yivi
@@ -5,4 +7,11 @@ services:
     command: server -v -c /config.yml
     restart: always
     volumes:
-    - ./config.yml:/config.yml
+      - ./config.yml:/config.yml
+    networks:
+      - tosti-yivi
+
+networks:
+    tosti-yivi:
+        external: true
+        name: caddy_reverseproxy
