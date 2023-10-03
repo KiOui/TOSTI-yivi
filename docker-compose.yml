@@ -10,6 +10,8 @@ services:
       - ./config.yml:/config.yml
     networks:
       - tosti-yivi
+    environment:
+      YIVI_TOKEN: ${YIVI_TOKEN}
 
 networks:
     tosti-yivi:
