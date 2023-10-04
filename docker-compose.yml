@@ -4,16 +4,10 @@ services:
   yivi:
     container_name: tosti-yivi
     image: ghcr.io/privacybydesign/irma:edge
-    command: server -v -c /config.yml
+    command: >
+      server -v --requestors '{"tosti": {"auth_method": "token", "key": "${YIVI_TOKEN}"}}' -c /config.yml
     restart: always
     volumes:
       - ./config.yml:/config.yml
-    networks:
-      - tosti-yivi
     environment:
       YIVI_TOKEN: ${YIVI_TOKEN}
-
-networks:
-    tosti-yivi:
-        external: true
-        name: caddy_reverseproxy
