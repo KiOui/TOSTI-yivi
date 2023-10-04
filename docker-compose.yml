@@ -11,3 +11,8 @@ services:
       - ./config.yml:/config.yml
     environment:
       YIVI_TOKEN: ${YIVI_TOKEN}
+
+networks:
+    tosti-yivi:
+        external: true
+        name: caddy_reverseproxy
