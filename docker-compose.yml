@@ -9,6 +9,8 @@ services:
     restart: always
     volumes:
       - ./config.yml:/config.yml
+    networks:
+      - tosti-yivi
     environment:
       YIVI_TOKEN: ${YIVI_TOKEN}
 
